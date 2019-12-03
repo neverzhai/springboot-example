@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shuanger.springbootexample.mapper.SystemUserMapper">
+
+<!--    <sql id="whereScript">-->
+<!--        <where>-->
+<!--            <if test="id!=null">-->
+<!--                id=#{id}-->
+<!--            </if>-->
+<!--            <if test="username!=null and username!=''">-->
+<!--                and username= #{username}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </sql>-->
+
+<!--    <sql id="setScript">-->
+<!--        <set>-->
+<!--            <if test="password!=null and password!=''">-->
+<!--                password = #{password}-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <set>-->
+<!--            <if test="role!=null and role!=''">-->
+<!--                role= #{role}-->
+<!--            </if>-->
+<!--        </set>-->
+<!--    </sql>-->
+
+<!--    <insert id="insert" parameterType="com.jdcity.pjlsd.entity.SystemUser">-->
+<!--		insert into client_user ( username , password, role)-->
+<!--		(select #{username}, #{password}, #{role} from dual where-->
+<!--		 ( select count(1) from client_user where username = #{username} ) = 0 and-->
+<!--		 ( select count(1) from client_user where role = 0 and  #{role} = 0  ) = 0-->
+<!--		 )-->
+<!--	</insert>-->
+
+<!--    <update id="resetPassword" parameterType="map">-->
+<!--        update client_user-->
+<!--        <include refid="setScript" />-->
+<!--        <include refid="whereScript" />-->
+<!--    </update>-->
+
+    <select id="queryByUsername" resultType="com.shuanger.springbootexample.PO.SystemUserPO">
+        select id, user_name, user_email, user_password, user_info, head_img, created_date, modified_date
+        from sys_user
+        where user_name=#{username};
+    </select>
+</mapper>
