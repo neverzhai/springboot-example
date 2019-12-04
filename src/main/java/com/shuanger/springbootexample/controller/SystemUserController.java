@@ -2,6 +2,7 @@ package com.shuanger.springbootexample.controller;
 
 import com.shuanger.springbootexample.VO.SystemUserVO;
 import com.shuanger.springbootexample.domain.SystemUser;
+import com.shuanger.springbootexample.params.CreateUserParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
 import com.shuanger.springbootexample.service.SystemUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class SystemUserController {
     @Autowired
     SystemUserService systemUserService;
 
-    @RequestMapping()
+    @RequestMapping("/query")
     public SystemUserVO queryUserByUsername(@RequestBody QueryUserParam queryUserParam) {
         SystemUser systemUser = systemUserService.queryByUsername(queryUserParam.getUsername());
 
@@ -25,5 +26,10 @@ public class SystemUserController {
         systemUserVO.setUserEmail(systemUser.getUserEmail());
         systemUserVO.setUserInfo(systemUser.getUserInfo());
         return systemUserVO;
+    }
+
+    @RequestMapping("/create")
+    public Integer insert(@RequestBody CreateUserParam createUserParam) {
+       return systemUserService.insert(createUserParam);
     }
 }

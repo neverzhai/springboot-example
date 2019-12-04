@@ -8,7 +8,5 @@ CREATE TABLE `sys_user`(
  `created_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
  `modified_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间'
 );
-INSERT INTO sys_user ( user_name, user_email, user_password, user_info)
-VALUES('shuanger', 'zhaixiaoshuang@jd.com', '123456','a programmer');
 
 

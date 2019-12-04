@@ -27,13 +27,12 @@
 <!--        </set>-->
 <!--    </sql>-->
 
-<!--    <insert id="insert" parameterType="com.jdcity.pjlsd.entity.SystemUser">-->
-<!--		insert into client_user ( username , password, role)-->
-<!--		(select #{username}, #{password}, #{role} from dual where-->
-<!--		 ( select count(1) from client_user where username = #{username} ) = 0 and-->
-<!--		 ( select count(1) from client_user where role = 0 and  #{role} = 0  ) = 0-->
-<!--		 )-->
-<!--	</insert>-->
+    <insert id="insert" parameterType="com.shuanger.springbootexample.domain.SystemUser">
+		insert into sys_user (user_name , user_password, user_email, user_info, head_img)
+		values (
+		        #{username}, #{userPassword}, #{userEmail}, #{userInfo}, #{headImg}
+               )
+	</insert>
 
 <!--    <update id="resetPassword" parameterType="map">-->
 <!--        update client_user-->
