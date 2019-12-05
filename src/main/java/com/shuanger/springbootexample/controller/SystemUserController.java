@@ -1,6 +1,6 @@
 package com.shuanger.springbootexample.controller;
 
-import com.shuanger.springbootexample.VO.SystemUserVO;
+import com.shuanger.springbootexample.DTO.SystemUserDTO;
 import com.shuanger.springbootexample.domain.SystemUser;
 import com.shuanger.springbootexample.params.CreateUserParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
@@ -18,14 +18,14 @@ public class SystemUserController {
     SystemUserService systemUserService;
 
     @RequestMapping("/query")
-    public SystemUserVO queryUserByUsername(@RequestBody QueryUserParam queryUserParam) {
+    public SystemUserDTO queryUserByUsername(@RequestBody QueryUserParam queryUserParam) {
         SystemUser systemUser = systemUserService.queryByUsername(queryUserParam.getUsername());
 
-        SystemUserVO systemUserVO = new SystemUserVO();
-        systemUserVO.setUsername(systemUser.getUsername());
-        systemUserVO.setUserEmail(systemUser.getUserEmail());
-        systemUserVO.setUserInfo(systemUser.getUserInfo());
-        return systemUserVO;
+        SystemUserDTO systemUserDTO = new SystemUserDTO();
+        systemUserDTO.setUsername(systemUser.getUsername());
+        systemUserDTO.setUserEmail(systemUser.getUserEmail());
+        systemUserDTO.setUserInfo(systemUser.getUserInfo());
+        return systemUserDTO;
     }
 
     @RequestMapping("/create")

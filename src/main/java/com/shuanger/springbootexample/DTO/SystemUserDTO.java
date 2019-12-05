@@ -1,9 +1,9 @@
-package com.shuanger.springbootexample.VO;
+package com.shuanger.springbootexample.DTO;
 
 import lombok.Data;
 
 @Data
-public class SystemUserVO {
+public class SystemUserDTO {
     String username;
     String userInfo;
     String userEmail;

@@ -1,6 +1,6 @@
 package com.shuanger.springbootexample.integrationTests;
 
-import com.shuanger.springbootexample.VO.SystemUserVO;
+import com.shuanger.springbootexample.DTO.SystemUserDTO;
 import com.shuanger.springbootexample.params.CreateUserParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
 import org.junit.jupiter.api.AfterEach;
@@ -56,10 +56,10 @@ public class SystemUserControllerIntegrationTest {
         QueryUserParam queryUserParam = new QueryUserParam();
         queryUserParam.setUsername("shuanger");
 
-        SystemUserVO systemUserVO = this.template.postForObject("http://localhost:" + port + "/user/query", queryUserParam, SystemUserVO.class);
+        SystemUserDTO systemUserDTO = this.template.postForObject("http://localhost:" + port + "/user/query", queryUserParam, SystemUserDTO.class);
 
-        assertThat(systemUserVO.getUsername()).isEqualTo("shuanger");
-        assertThat(systemUserVO.getUserEmail()).isEqualTo("zhaixiaoshuang@jd.com");
-        assertThat(systemUserVO.getUserInfo()).isEqualTo("a programmer");
+        assertThat(systemUserDTO.getUsername()).isEqualTo("shuanger");
+        assertThat(systemUserDTO.getUserEmail()).isEqualTo("zhaixiaoshuang@jd.com");
+        assertThat(systemUserDTO.getUserInfo()).isEqualTo("a programmer");
     }
 }
