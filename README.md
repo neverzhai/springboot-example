@@ -1,2 +1,1 @@
-# springboot-example
-Use to practice different spring boot functions
+# springboot-exampleUse to practice different spring boot functions
