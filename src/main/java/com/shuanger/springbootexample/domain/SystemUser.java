@@ -19,7 +19,7 @@ public class SystemUser extends BaseEntity{
 
     private String headImg;
 
-//    private String salt;
+    private String salt;
 
     //Domain 中有操作domain的方法
 
