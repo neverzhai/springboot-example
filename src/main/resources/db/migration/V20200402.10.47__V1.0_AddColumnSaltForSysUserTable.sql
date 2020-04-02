@@ -1,0 +1,1 @@
+ALTER TABLE `sys_user` ADD COLUMN salt varchar(255) NOT NULL COMMENT '密码盐';
