@@ -1,0 +1,1 @@
+ALTER TABLE `sys_role_privilege` ADD COLUMN salt varchar(255) NOT NULL COMMENT '密码盐';
