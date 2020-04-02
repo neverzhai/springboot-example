@@ -1,6 +1,7 @@
 package com.shuanger.springbootexample.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Data;
 
 /**
@@ -9,13 +10,15 @@ import lombok.Data;
  * @description: 角色domain
  */
 @Data
-@TableName("sys_bk_role")
+@TableName("sys_role")
 public class SystemRole extends BaseEntity {
 
     private Long id;
 
     private String roleName;
 
-    private Long creator;
+    private Boolean enabled;
+
+    private Long createBy;
 
 }

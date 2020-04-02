@@ -1,5 +1,6 @@
 package com.shuanger.springbootexample.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @description: 系统权限定义
  */
 @Data
+@TableName("sys_privilege")
 public class SystemPrivilege extends BaseEntity {
 
     private Long id;
@@ -15,7 +17,5 @@ public class SystemPrivilege extends BaseEntity {
     private String privilegeName;
 
     private String privilegeUrl;
-
-    private Long creator;
 
 }
