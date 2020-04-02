@@ -1,12 +1,9 @@
 package com.shuanger.springbootexample.mapper;
 
 
-import com.shuanger.springbootexample.PO.SystemUserPO;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.shuanger.springbootexample.domain.SystemUser;
-import org.apache.ibatis.annotations.Param;
 
-public interface SystemUserMapper {
-    SystemUserPO queryByUsername(@Param("username") String username);
+public interface SystemUserMapper extends BaseMapper<SystemUser> {
 
-    int insert(SystemUser systemUser);
 }
