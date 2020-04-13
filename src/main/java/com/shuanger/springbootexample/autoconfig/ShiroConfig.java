@@ -1,7 +1,7 @@
 
 package com.shuanger.springbootexample.autoconfig;
 
-import com.shuanger.springbootexample.domain.CustomRealm;
+import com.shuanger.springbootexample.shiro.CustomRealm;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -20,6 +20,8 @@ public class ShiroConfig {
     CustomRealm myRealm() {
         return new CustomRealm();
     }
+
+
     @Bean
     DefaultWebSecurityManager securityManager() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();

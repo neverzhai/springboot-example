@@ -3,7 +3,9 @@ package com.shuanger.springbootexample.controller;
 import com.shuanger.springbootexample.DTO.SystemUserDTO;
 import com.shuanger.springbootexample.common.response.RespCode;
 import com.shuanger.springbootexample.common.response.RespEntity;
+import com.shuanger.springbootexample.common.util.JWTUtil;
 import com.shuanger.springbootexample.domain.SystemUser;
+import com.shuanger.springbootexample.params.LoginParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
 import com.shuanger.springbootexample.service.impl.SystemUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,16 @@ public class SystemUserController {
 
     @Autowired
     SystemUserServiceImpl systemUserService;
+
+    @RequestMapping("/login")
+    public RespEntity login(@RequestBody LoginParam loginParam) {
+
+        SystemUser systemUser = systemUserService.queryBy(SystemUser::getUsername, loginParam.getUsername());
+        String token = JWTUtil.sign(systemUser);
+
+        return RespEntity.create(RespCode.SUCCESS, token);
+
+    }
 
     @RequestMapping("/query")
     public RespEntity queryUserByUsername(@RequestBody QueryUserParam queryUserParam) {
