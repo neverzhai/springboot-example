@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuanger.springbootexample.mapper.InterestInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shuanger.springbootexample.domain.InterestInfo">
+        <id column="id" property="id" />
+        <result column="interest_id" property="interestId" />
+        <result column="interest_name" property="interestName" />
+        <result column="total_count" property="totalCount" />
+        <result column="online_count" property="onlineCount" />
+        <result column="offline_count" property="offlineCount" />
+        <result column="deleted" property="deleted" />
+        <result column="created_time" property="createdTime" />
+        <result column="modified_time" property="modifiedTime" />
+    </resultMap>
+
+    <update id="batchUpdate" parameterType="java.util.List">
+        <foreach collection="list" item="interestInfo" index="index" separator=";">
+            update interest_info
+            <set>
+                offline_count = offline_count - #{interestInfo.reduceCount}
+            </set>
+            where batch_id = #{interestInfo.batchId}
+        </foreach>
+    </update>
+</mapper>

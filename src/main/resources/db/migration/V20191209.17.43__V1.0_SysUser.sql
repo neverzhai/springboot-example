@@ -1,5 +1,5 @@
 CREATE TABLE `sys_user`(
-                           `id` INT NOT NULL AUTO_INCREMENT COMMENT '用户id',
+                           `id` BIGINT(20) UNSIGNED  NOT NULL AUTO_INCREMENT COMMENT '用户id',
                            `username` VARCHAR(50) NOT NULL COMMENT '用户名',
                            `user_email` VARCHAR(50)  NOT NULL COMMENT '用户邮箱',
                            `password` VARCHAR(255)  NOT NULL COMMENT '用户密码',

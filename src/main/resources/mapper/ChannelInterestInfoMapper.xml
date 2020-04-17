@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuanger.springbootexample.mapper.ChannelInterestInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shuanger.springbootexample.domain.ChannelInterestInfo">
+        <id column="id" property="id" />
+        <result column="channel_interest_id" property="channelInterestId" />
+        <result column="interest_id" property="interestId" />
+        <result column="interest_name" property="interestName" />
+        <result column="online_count" property="onlineCount" />
+        <result column="current_total_count" property="currentTotalCount" />
+        <result column="deleted" property="deleted" />
+        <result column="created_time" property="createdTime" />
+        <result column="modified_time" property="modifiedTime" />
+    </resultMap>
+
+</mapper>

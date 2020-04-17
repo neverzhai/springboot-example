@@ -7,6 +7,7 @@ import com.shuanger.springbootexample.common.util.JWTUtil;
 import com.shuanger.springbootexample.domain.SystemUser;
 import com.shuanger.springbootexample.params.LoginParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
+import com.shuanger.springbootexample.service.ISystemUserService;
 import com.shuanger.springbootexample.service.impl.SystemUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SystemUserController {
 
     @Autowired
-    SystemUserServiceImpl systemUserService;
+    ISystemUserService systemUserService;
 
     @RequestMapping("/login")
     public RespEntity login(@RequestBody LoginParam loginParam) {

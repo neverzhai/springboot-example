@@ -32,7 +32,7 @@ public class ShiroConfig {
     ShiroFilterChainDefinition shiroFilterChainDefinition() {
         DefaultShiroFilterChainDefinition definition = new DefaultShiroFilterChainDefinition();
         definition.addPathDefinition("/doLogin", "anon");
-        definition.addPathDefinition("/**", "authc");
+        definition.addPathDefinition("/**", "anon");
         return definition;
     }
 }
