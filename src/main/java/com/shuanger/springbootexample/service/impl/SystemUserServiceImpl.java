@@ -22,4 +22,9 @@ public class SystemUserServiceImpl extends ServiceImpl<SystemUserMapper, SystemU
 
         return systemUser;
     }
+
+    @Override
+    public Integer insert(SystemUser systemUser) {
+        return null;
+    }
 }

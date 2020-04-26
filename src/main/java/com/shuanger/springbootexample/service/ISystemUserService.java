@@ -12,4 +12,6 @@ import com.shuanger.springbootexample.domain.SystemUser;
 public interface ISystemUserService extends IService<SystemUser> {
 
     SystemUser queryBy(SFunction<SystemUser, Object> conditional, String value);
+
+    Integer insert(SystemUser systemUser);
 }
