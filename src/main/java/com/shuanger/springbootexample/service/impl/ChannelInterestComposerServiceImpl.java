@@ -47,7 +47,6 @@ public class ChannelInterestComposerServiceImpl implements ChannelInterestCompos
         });
 
         boolean saveBatch = channelInterestInfoService.saveBatch(newChannelInterests);
-//        interestInfoService.s
         interestInfoService.batchUpdate(interestInfoBos);
     }
 }
