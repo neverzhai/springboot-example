@@ -3,8 +3,10 @@ package com.shuanger.springbootexample.domain;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.shuanger.springbootexample.DTO.SystemUserDTO;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Data
+@Accessors(chain = true)
 @TableName("sys_user")
 public class SystemUser extends BaseEntity{
 

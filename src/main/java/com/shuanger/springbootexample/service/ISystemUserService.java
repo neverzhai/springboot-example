@@ -3,6 +3,7 @@ package com.shuanger.springbootexample.service;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.shuanger.springbootexample.domain.SystemUser;
+import com.shuanger.springbootexample.params.CreateUserParam;
 
 /**
  * @author: zhaixiaoshuang
@@ -12,4 +13,6 @@ import com.shuanger.springbootexample.domain.SystemUser;
 public interface ISystemUserService extends IService<SystemUser> {
 
     SystemUser queryBy(SFunction<SystemUser, Object> conditional, String value);
+
+    Integer insert(CreateUserParam createUserParam);
 }

@@ -5,6 +5,7 @@ import com.shuanger.springbootexample.common.response.RespCode;
 import com.shuanger.springbootexample.common.response.RespEntity;
 import com.shuanger.springbootexample.common.util.JWTUtil;
 import com.shuanger.springbootexample.domain.SystemUser;
+import com.shuanger.springbootexample.params.CreateUserParam;
 import com.shuanger.springbootexample.params.LoginParam;
 import com.shuanger.springbootexample.params.QueryUserParam;
 import com.shuanger.springbootexample.service.ISystemUserService;
@@ -41,8 +42,16 @@ public class SystemUserController {
 
     }
 
-//    @RequestMapping("/create")
-//    public Integer insert(@RequestBody CreateUserParam createUserParam) {
-//       return systemUserService.insert(createUserParam);
-//    }
+    @RequestMapping("/create")
+    public Integer insert(@RequestBody CreateUserParam createUserParam) {
+        SystemUser systemUser = new SystemUser()
+                .setUsername(createUserParam.getUsername())
+                .setUserInfo(createUserParam.getUserInfo())
+                .setUserEmail(createUserParam.getUserEmail())
+                .setPassword(createUserParam.getUserPassword())
+                .setHeadImg(createUserParam.getHeadImg());
+
+
+        return systemUserService.insert(createUserParam);
+    }
 }
