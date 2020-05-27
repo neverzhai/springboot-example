@@ -63,6 +63,6 @@ public class SystemUserController {
         Integer count = systemUserService.insert(user);
 
         return count;
-
     }
+
 }

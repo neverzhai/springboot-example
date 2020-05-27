@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.shuanger.springbootexample.domain.SystemUser;
 import com.shuanger.springbootexample.mapper.SystemUserMapper;
+import com.shuanger.springbootexample.params.CreateUserParam;
 import com.shuanger.springbootexample.service.ISystemUserService;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +28,5 @@ public class SystemUserServiceImpl extends ServiceImpl<SystemUserMapper, SystemU
     public Integer insert(SystemUser systemUser) {
         return null;
     }
+
 }
