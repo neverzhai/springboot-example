@@ -1,5 +1,7 @@
 package com.shuanger.springbootexample.cache;
 
+import cn.hutool.core.lang.TypeReference;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -49,9 +51,10 @@ public interface CacheService {
      * 普通缓存获取
      *
      * @param key 键
+     * @param typeReference
      * @return 值
      */
-    public Object get(String key);
+    public Object get(String key, TypeReference<Object> typeReference);
     /**
      * 普通缓存放入
      *

@@ -1,5 +1,6 @@
 package com.shuanger.springbootexample.cache.impl;
 
+import cn.hutool.core.lang.TypeReference;
 import com.shuanger.springbootexample.cache.CacheService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -89,10 +90,11 @@ public class RedisCacheServiceImpl implements CacheService {
      * 普通缓存获取
      *
      * @param key 键
+     * @param typeReference
      * @return 值
      */
     @Override
-    public Object get(String key) {
+    public Object get(String key, TypeReference<Object> typeReference) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
 
