@@ -330,4 +330,5 @@ public interface CacheService {
 
     public Boolean setNX(String key, String value, Long expire);
 
+    Long incrDaily(String s);
 }

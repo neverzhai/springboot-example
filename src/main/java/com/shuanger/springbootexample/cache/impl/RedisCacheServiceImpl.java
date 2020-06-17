@@ -620,4 +620,9 @@ public class RedisCacheServiceImpl implements CacheService {
         }
         return redisTemplate.opsForValue().setIfAbsent(key, value, expire, TimeUnit.SECONDS);
     }
+
+    @Override
+    public Long incrDaily(String s) {
+        return null;
+    }
 }
